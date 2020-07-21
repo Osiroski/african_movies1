@@ -1,14 +1,15 @@
 import tweepy
 import logging
 import credentials
+from os impro environ
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
 def create_api():
    
-    auth = tweepy.OAuthHandler(credentials.CONSUMER_KEY, credentials.CONSUMER_SECRET)
-    auth.set_access_token(credentials.ACCESS_TOKEN, credentials.ACCESS_SECRET)
+    auth = tweepy.OAuthHandler(environ['CONSUMER_KEY'], environ['CONSUMER_SECRET'])
+    auth.set_access_token(environ['ACCESS_TOKEN'], environ['ACCESS_SECRET'])
     api = tweepy.API(auth, wait_on_rate_limit=True, 
         wait_on_rate_limit_notify=True)
     try:
