@@ -9,7 +9,6 @@ from scraper import get_title
 import pandas as pd
 import random
 
-
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger()
 
